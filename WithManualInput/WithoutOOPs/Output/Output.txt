@@ -1,0 +1,49 @@
+===== Input Data =====
+
+Drivers Information:
+Driver ID: d1, Source: 1, Destination: 33, Seats: 5, Threshold: 25
+Driver ID: d2, Source: 3, Destination: 32, Seats: 3, Threshold: 25
+Driver ID: d3, Source: 5, Destination: 34, Seats: 4, Threshold: 25
+
+Riders Information:
+Rider ID: r1, Source: 10, Destination: 28
+Rider ID: r2, Source: 19, Destination: 32
+Rider ID: r3, Source: 16, Destination: 23
+Rider ID: r4, Source: 11, Destination: 24
+Rider ID: r5, Source: 7, Destination: 22
+Rider ID: r6, Source: 21, Destination: 34
+Rider ID: r7, Source: 15, Destination: 33
+Rider ID: r8, Source: 7, Destination: 31
+Rider ID: r9, Source: 6, Destination: 21
+
+===== Offer Count for Each Rider =====
+Rider 1 has 2 offers
+Rider 2 has 1 offers
+Rider 3 has 1 offers
+Rider 4 has 2 offers
+Rider 5 has 2 offers
+Rider 6 has 1 offers
+Rider 7 has 1 offers
+Rider 8 has 1 offers
+Rider 9 has 1 offers
+
+===== Assigned Riders, Paths, and Remaining Seats for Each Driver =====
+Driver d1:
+  Driver Path: [1, 8, 10, 14, 18, 23, 24, 28, 33]
+  Remaining Seats: 4
+  Rider r1 assigned on path [10, 14, 18, 23, 24, 28] from 10 to 28
+Driver d2:
+  Driver Path: [3, 7, 11, 10, 14, 18, 23, 31, 32]
+  Remaining Seats: 1
+  Rider r2 assigned on path [19, 23, 31, 32] from 19 to 32
+  Rider r8 assigned on path [7, 11, 10, 14, 18, 23, 31] from 7 to 31
+Driver d3:
+  Driver Path: [5, 6, 13, 17, 22, 21, 29, 34]
+  Remaining Seats: 2
+  Rider r9 assigned on path [6, 13, 17, 22, 21] from 6 to 21
+  Rider r6 assigned on path [21, 29, 34] from 21 to 34
+
+===== Summary =====
+Total Seats: 12
+Total Riders: 9
+Total Number of Accommodated Riders: 5 out of 9

@@ -1,0 +1,23 @@
+[
+    {
+        "id": "D1",
+        "source": "Madan Mohan Malviya Hall",
+        "destination": "Nalanda Lecture Complex",
+        "seats": 5,
+        "threshold": 25
+    },
+    {
+        "id": "D2",
+        "source": "Tech Market",
+        "destination": "Nehru Museum of Science & Technology",
+        "seats": 3,
+        "threshold": 25
+    },
+    {
+        "id": "D3",
+        "source": "IIT Puri Gate Security Office",
+        "destination": "DAV Model School",
+        "seats": 4,
+        "threshold": 25
+    }
+]

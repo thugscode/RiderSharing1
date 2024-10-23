@@ -1,0 +1,298 @@
+Loaded drivers: [{'id': 'd1', 'source': 1, 'destination': 33, 'seats': 5, 'threshold': 25}, {'id': 'd2', 'source': 3, 'destination': 32, 'seats': 3, 'threshold': 25}, {'id': 'd3', 'source': 5, 'destination': 34, 'seats': 4, 'threshold': 25}]
+Loaded riders: [{'id': 'r1', 'source': 10, 'destination': 28}, {'id': 'r2', 'source': 19, 'destination': 32}, {'id': 'r3', 'source': 16, 'destination': 23}, {'id': 'r4', 'source': 11, 'destination': 24}, {'id': 'r5', 'source': 7, 'destination': 22}, {'id': 'r6', 'source': 21, 'destination': 34}, {'id': 'r7', 'source': 15, 'destination': 33}, {'id': 'r8', 'source': 7, 'destination': 31}, {'id': 'r9', 'source': 6, 'destination': 21}]
+EligibilityRiderMatrix initialized.
+Total initial seats: 12
+Running the ride-sharing system...Initialized ER matrix of size (3, 9) and offers: [0 0 0 0 0 0 0 0 0]
+Shortest path from 1 to 33: [1, 9, 14, 18, 23, 24, 28, 33], Length: 12
+Driver d1: Shortest Path (SP) length = 12, Maximum Path (MP) = 15.0
+Shortest path from 1 to 10: [1, 8, 10], Length: 4
+Shortest path from 10 to 28: [10, 14, 18, 23, 24, 28], Length: 6
+Shortest path from 28 to 33: [28, 33], Length: 3
+Deviated path for driver d1 and rider r1: DP1=4, DP2=6, DP3=3, Total DP=13
+Rider r1: Deviated Path (DP) length = 13
+Rider r1 is eligible for Driver d1
+Shortest path from 1 to 19: [1, 9, 14, 19], Length: 6
+Shortest path from 19 to 32: [19, 23, 31, 32], Length: 6
+Shortest path from 32 to 33: [32, 28, 33], Length: 5
+Deviated path for driver d1 and rider r2: DP1=6, DP2=6, DP3=5, Total DP=17
+Rider r2: Deviated Path (DP) length = 17
+Shortest path from 1 to 16: [1, 2, 3, 7, 12, 16], Length: 6
+Shortest path from 16 to 23: [16, 20, 24, 23], Length: 5
+Shortest path from 23 to 33: [23, 24, 28, 33], Length: 6
+Deviated path for driver d1 and rider r3: DP1=6, DP2=5, DP3=6, Total DP=17
+Rider r3: Deviated Path (DP) length = 17
+Shortest path from 1 to 11: [1, 8, 11], Length: 4
+Shortest path from 11 to 24: [11, 15, 19, 24], Length: 5
+Shortest path from 24 to 33: [24, 28, 33], Length: 5
+Deviated path for driver d1 and rider r4: DP1=4, DP2=5, DP3=5, Total DP=14
+Rider r4: Deviated Path (DP) length = 14
+Rider r4 is eligible for Driver d1
+Shortest path from 1 to 7: [1, 2, 3, 7], Length: 3
+Shortest path from 7 to 22: [7, 12, 17, 22], Length: 5
+Shortest path from 22 to 33: [22, 26, 29, 33], Length: 7
+Deviated path for driver d1 and rider r5: DP1=3, DP2=5, DP3=7, Total DP=15
+Rider r5: Deviated Path (DP) length = 15
+Rider r5 is eligible for Driver d1
+Shortest path from 1 to 21: [1, 2, 3, 7, 12, 21], Length: 9
+Shortest path from 21 to 34: [21, 29, 34], Length: 5
+Shortest path from 34 to 33: [34, 33], Length: 2
+Deviated path for driver d1 and rider r6: DP1=9, DP2=5, DP3=2, Total DP=16
+Rider r6: Deviated Path (DP) length = 16
+Shortest path from 1 to 15: [1, 8, 11, 15], Length: 6
+Shortest path from 15 to 33: [15, 19, 24, 28, 33], Length: 8
+Shortest path from 33 to 33: [33], Length: 0
+Deviated path for driver d1 and rider r7: DP1=6, DP2=8, DP3=0, Total DP=14
+Rider r7: Deviated Path (DP) length = 14
+Rider r7 is eligible for Driver d1
+Shortest path from 1 to 7: [1, 2, 3, 7], Length: 3
+Shortest path from 7 to 31: [7, 11, 10, 14, 18, 23, 31], Length: 9
+Shortest path from 31 to 33: [31, 32, 28, 33], Length: 6
+Deviated path for driver d1 and rider r8: DP1=3, DP2=9, DP3=6, Total DP=18
+Rider r8: Deviated Path (DP) length = 18
+Shortest path from 1 to 6: [1, 2, 3, 4, 5, 6], Length: 6
+Shortest path from 6 to 21: [6, 13, 17, 22, 21], Length: 4
+Shortest path from 21 to 33: [21, 29, 33], Length: 7
+Deviated path for driver d1 and rider r9: DP1=6, DP2=4, DP3=7, Total DP=17
+Rider r9: Deviated Path (DP) length = 17
+Shortest path from 3 to 32: [3, 8, 10, 14, 18, 23, 31, 32], Length: 11
+Driver d2: Shortest Path (SP) length = 11, Maximum Path (MP) = 13.75
+Shortest path from 3 to 10: [3, 8, 10], Length: 4
+Shortest path from 10 to 28: [10, 14, 18, 23, 24, 28], Length: 6
+Shortest path from 28 to 32: [28, 32], Length: 2
+Deviated path for driver d2 and rider r1: DP1=4, DP2=6, DP3=2, Total DP=12
+Rider r1: Deviated Path (DP) length = 12
+Rider r1 is eligible for Driver d2
+Shortest path from 3 to 19: [3, 7, 11, 15, 19], Length: 6
+Shortest path from 19 to 32: [19, 23, 31, 32], Length: 6
+Shortest path from 32 to 32: [32], Length: 0
+Deviated path for driver d2 and rider r2: DP1=6, DP2=6, DP3=0, Total DP=12
+Rider r2: Deviated Path (DP) length = 12
+Rider r2 is eligible for Driver d2
+Shortest path from 3 to 16: [3, 7, 12, 16], Length: 4
+Shortest path from 16 to 23: [16, 20, 24, 23], Length: 5
+Shortest path from 23 to 32: [23, 31, 32], Length: 4
+Deviated path for driver d2 and rider r3: DP1=4, DP2=5, DP3=4, Total DP=13
+Rider r3: Deviated Path (DP) length = 13
+Rider r3 is eligible for Driver d2
+Shortest path from 3 to 11: [3, 7, 11], Length: 3
+Shortest path from 11 to 24: [11, 15, 19, 24], Length: 5
+Shortest path from 24 to 32: [24, 28, 32], Length: 4
+Deviated path for driver d2 and rider r4: DP1=3, DP2=5, DP3=4, Total DP=12
+Rider r4: Deviated Path (DP) length = 12
+Rider r4 is eligible for Driver d2
+Shortest path from 3 to 7: [3, 7], Length: 1
+Shortest path from 7 to 22: [7, 12, 17, 22], Length: 5
+Shortest path from 22 to 32: [22, 21, 25, 28, 32], Length: 7
+Deviated path for driver d2 and rider r5: DP1=1, DP2=5, DP3=7, Total DP=13
+Rider r5: Deviated Path (DP) length = 13
+Rider r5 is eligible for Driver d2
+Shortest path from 3 to 21: [3, 7, 12, 21], Length: 7
+Shortest path from 21 to 34: [21, 29, 34], Length: 5
+Shortest path from 34 to 32: [34, 29, 28, 32], Length: 6
+Deviated path for driver d2 and rider r6: DP1=7, DP2=5, DP3=6, Total DP=18
+Rider r6: Deviated Path (DP) length = 18
+Shortest path from 3 to 15: [3, 7, 11, 15], Length: 5
+Shortest path from 15 to 33: [15, 19, 24, 28, 33], Length: 8
+Shortest path from 33 to 32: [33, 28, 32], Length: 5
+Deviated path for driver d2 and rider r7: DP1=5, DP2=8, DP3=5, Total DP=18
+Rider r7: Deviated Path (DP) length = 18
+Shortest path from 3 to 7: [3, 7], Length: 1
+Shortest path from 7 to 31: [7, 11, 10, 14, 18, 23, 31], Length: 9
+Shortest path from 31 to 32: [31, 32], Length: 1
+Deviated path for driver d2 and rider r8: DP1=1, DP2=9, DP3=1, Total DP=11
+Rider r8: Deviated Path (DP) length = 11
+Rider r8 is eligible for Driver d2
+Shortest path from 3 to 6: [3, 4, 5, 6], Length: 4
+Shortest path from 6 to 21: [6, 13, 17, 22, 21], Length: 4
+Shortest path from 21 to 32: [21, 25, 28, 32], Length: 6
+Deviated path for driver d2 and rider r9: DP1=4, DP2=4, DP3=6, Total DP=14
+Rider r9: Deviated Path (DP) length = 14
+Shortest path from 5 to 34: [5, 6, 13, 17, 22, 26, 29, 34], Length: 10
+Driver d3: Shortest Path (SP) length = 10, Maximum Path (MP) = 12.5
+Shortest path from 5 to 10: [5, 7, 11, 10], Length: 6
+Shortest path from 10 to 28: [10, 14, 18, 23, 24, 28], Length: 6
+Shortest path from 28 to 34: [28, 29, 34], Length: 4
+Deviated path for driver d3 and rider r1: DP1=6, DP2=6, DP3=4, Total DP=16
+Rider r1: Deviated Path (DP) length = 16
+Shortest path from 5 to 19: [5, 7, 11, 15, 19], Length: 8
+Shortest path from 19 to 32: [19, 23, 31, 32], Length: 6
+Shortest path from 32 to 34: [32, 28, 29, 34], Length: 6
+Deviated path for driver d3 and rider r2: DP1=8, DP2=6, DP3=6, Total DP=20
+Rider r2: Deviated Path (DP) length = 20
+Shortest path from 5 to 16: [5, 6, 13, 12, 16], Length: 5
+Shortest path from 16 to 23: [16, 20, 24, 23], Length: 5
+Shortest path from 23 to 34: [23, 24, 28, 29, 34], Length: 7
+Deviated path for driver d3 and rider r3: DP1=5, DP2=5, DP3=7, Total DP=17
+Rider r3: Deviated Path (DP) length = 17
+Shortest path from 5 to 11: [5, 7, 11], Length: 5
+Shortest path from 11 to 24: [11, 15, 19, 24], Length: 5
+Shortest path from 24 to 34: [24, 28, 29, 34], Length: 6
+Deviated path for driver d3 and rider r4: DP1=5, DP2=5, DP3=6, Total DP=16
+Rider r4: Deviated Path (DP) length = 16
+Shortest path from 5 to 7: [5, 7], Length: 3
+Shortest path from 7 to 22: [7, 12, 17, 22], Length: 5
+Shortest path from 22 to 34: [22, 26, 29, 34], Length: 5
+Deviated path for driver d3 and rider r5: DP1=3, DP2=5, DP3=5, Total DP=13
+Rider r5: Deviated Path (DP) length = 13
+Shortest path from 5 to 21: [5, 6, 13, 17, 22, 21], Length: 6
+Shortest path from 21 to 34: [21, 29, 34], Length: 5
+Shortest path from 34 to 34: [34], Length: 0
+Deviated path for driver d3 and rider r6: DP1=6, DP2=5, DP3=0, Total DP=11
+Rider r6: Deviated Path (DP) length = 11
+Rider r6 is eligible for Driver d3
+Shortest path from 5 to 15: [5, 7, 11, 15], Length: 7
+Shortest path from 15 to 33: [15, 19, 24, 28, 33], Length: 8
+Shortest path from 33 to 34: [33, 34], Length: 2
+Deviated path for driver d3 and rider r7: DP1=7, DP2=8, DP3=2, Total DP=17
+Rider r7: Deviated Path (DP) length = 17
+Shortest path from 5 to 7: [5, 7], Length: 3
+Shortest path from 7 to 31: [7, 11, 10, 14, 18, 23, 31], Length: 9
+Shortest path from 31 to 34: [31, 32, 28, 29, 34], Length: 7
+Deviated path for driver d3 and rider r8: DP1=3, DP2=9, DP3=7, Total DP=19
+Rider r8: Deviated Path (DP) length = 19
+Shortest path from 5 to 6: [5, 6], Length: 2
+Shortest path from 6 to 21: [6, 13, 17, 22, 21], Length: 4
+Shortest path from 21 to 34: [21, 29, 34], Length: 5
+Deviated path for driver d3 and rider r9: DP1=2, DP2=4, DP3=5, Total DP=11
+Rider r9: Deviated Path (DP) length = 11
+Rider r9 is eligible for Driver d3
+Eligibility matrix after calculation: 
+[[1 0 0 1 1 0 1 0 0]
+ [1 1 1 1 1 0 0 1 0]
+ [0 0 0 0 0 1 0 0 1]]
+Updated offers: [2 1 1 2 2 1 1 1 1]
+Initial DP_assigned: {'d1': {'driver_path': [], 'riders': []}, 'd2': {'driver_path': [], 'riders': []}, 'd3': {'driver_path': [], 'riders': []}}
+Non-zero offers: [2 1 1 2 2 1 1 1 1]
+Selected rider 5 with min offer: 1
+Eligible drivers for rider 5: [2]
+Only one eligible driver: 2
+Assigned driver 2 to rider 5
+Shortest path from 5 to 21: [5, 6, 13, 17, 22, 21], Length: 6
+Shortest path from 21 to 34: [21, 29, 34], Length: 5
+Shortest path from 34 to 34: [34], Length: 0
+Calculated deviated path for driver d3 and rider r6: [5, 6, 13, 17, 22, 21, 29, 34]
+Updated DP_assigned for driver d3: {'driver_path': [5, 6, 13, 17, 22, 21, 29, 34], 'riders': [{'rider_id': 'r6', 'source': 21, 'destination': 34}]}
+Updating eligibility for driver 2 and rider 5
+Rider r6 is on the deviated route of driver d3
+Rider r9 is on the deviated route of driver d3
+Updated eligibility matrix for driver 2: [0 0 0 0 0 1 0 0 1]
+Updated seats for driver 2: 3
+Updated offers: [2 1 1 2 2 0 1 1 1]
+Non-zero offers: [2 1 1 2 2 1 1 1]
+Selected rider 1 with min offer: 1
+Eligible drivers for rider 1: [1]
+Only one eligible driver: 1
+Assigned driver 1 to rider 1
+Shortest path from 3 to 19: [3, 7, 11, 15, 19], Length: 6
+Shortest path from 19 to 32: [19, 23, 31, 32], Length: 6
+Shortest path from 32 to 32: [32], Length: 0
+Calculated deviated path for driver d2 and rider r2: [3, 7, 11, 15, 19, 23, 31, 32]
+Updated DP_assigned for driver d2: {'driver_path': [3, 7, 11, 15, 19, 23, 31, 32], 'riders': [{'rider_id': 'r2', 'source': 19, 'destination': 32}]}
+Updating eligibility for driver 1 and rider 1
+Rider r1 is NOT on the deviated route of driver d2
+Rider r2 is on the deviated route of driver d2
+Rider r3 is NOT on the deviated route of driver d2
+Rider r4 is NOT on the deviated route of driver d2
+Rider r5 is NOT on the deviated route of driver d2
+Rider r8 is on the deviated route of driver d2
+Updated eligibility matrix for driver 1: [0 1 0 0 0 0 0 1 0]
+Updated seats for driver 1: 2
+Updated offers: [1 0 0 1 1 0 1 1 1]
+Non-zero offers: [1 1 1 1 1 1]
+Selected rider 7 with min offer: 1
+Eligible drivers for rider 7: [1]
+Only one eligible driver: 1
+Assigned driver 1 to rider 7
+Shortest path from 3 to 7: [3, 7], Length: 1
+Shortest path from 7 to 31: [7, 11, 10, 14, 18, 23, 31], Length: 9
+Shortest path from 31 to 32: [31, 32], Length: 1
+Calculated deviated path for driver d2 and rider r8: [3, 7, 11, 10, 14, 18, 23, 31, 32]
+Updated DP_assigned for driver d2: {'driver_path': [3, 7, 11, 10, 14, 18, 23, 31, 32], 'riders': [{'rider_id': 'r2', 'source': 19, 'destination': 32}, {'rider_id': 'r8', 'source': 7, 'destination': 31}]}
+Updating eligibility for driver 1 and rider 7
+Rider r8 is on the deviated route of driver d2
+Updated eligibility matrix for driver 1: [0 0 0 0 0 0 0 1 0]
+Updated seats for driver 1: 1
+Updated offers: [1 0 0 1 1 0 1 0 1]
+Non-zero offers: [1 1 1 1 1]
+Selected rider 3 with min offer: 1
+Eligible drivers for rider 3: [0]
+Only one eligible driver: 0
+Assigned driver 0 to rider 3
+Shortest path from 1 to 11: [1, 8, 11], Length: 4
+Shortest path from 11 to 24: [11, 15, 19, 24], Length: 5
+Shortest path from 24 to 33: [24, 28, 33], Length: 5
+Calculated deviated path for driver d1 and rider r4: [1, 8, 11, 15, 19, 24, 28, 33]
+Updated DP_assigned for driver d1: {'driver_path': [1, 8, 11, 15, 19, 24, 28, 33], 'riders': [{'rider_id': 'r4', 'source': 11, 'destination': 24}]}
+Updating eligibility for driver 0 and rider 3
+Rider r1 is NOT on the deviated route of driver d1
+Rider r4 is on the deviated route of driver d1
+Rider r5 is NOT on the deviated route of driver d1
+Rider r7 is on the deviated route of driver d1
+Updated eligibility matrix for driver 0: [0 0 0 1 0 0 1 0 0]
+Updated seats for driver 0: 4
+Updated offers: [0 0 0 0 0 0 1 0 1]
+Non-zero offers: [1 1]
+Selected rider 8 with min offer: 1
+Eligible drivers for rider 8: [2]
+Only one eligible driver: 2
+Assigned driver 2 to rider 8
+Shortest path from 5 to 6: [5, 6], Length: 2
+Shortest path from 6 to 21: [6, 13, 17, 22, 21], Length: 4
+Shortest path from 21 to 34: [21, 29, 34], Length: 5
+Calculated deviated path for driver d3 and rider r9: [5, 6, 13, 17, 22, 21, 29, 34]
+Updated DP_assigned for driver d3: {'driver_path': [5, 6, 13, 17, 22, 21, 29, 34], 'riders': [{'rider_id': 'r6', 'source': 21, 'destination': 34}, {'rider_id': 'r9', 'source': 6, 'destination': 21}]}
+Updating eligibility for driver 2 and rider 8
+Rider r9 is on the deviated route of driver d3
+Updated eligibility matrix for driver 2: [0 0 0 0 0 0 0 0 1]
+Updated seats for driver 2: 2
+Updated offers: [0 0 0 0 0 0 1 0 0]
+Non-zero offers: [1]
+Selected rider 6 with min offer: 1
+Eligible drivers for rider 6: [0]
+Only one eligible driver: 0
+Assigned driver 0 to rider 6
+Shortest path from 1 to 15: [1, 8, 11, 15], Length: 6
+Shortest path from 15 to 33: [15, 19, 24, 28, 33], Length: 8
+Shortest path from 33 to 33: [33], Length: 0
+Calculated deviated path for driver d1 and rider r7: [1, 8, 11, 15, 19, 24, 28, 33]
+Updated DP_assigned for driver d1: {'driver_path': [1, 8, 11, 15, 19, 24, 28, 33], 'riders': [{'rider_id': 'r4', 'source': 11, 'destination': 24}, {'rider_id': 'r7', 'source': 15, 'destination': 33}]}
+Updating eligibility for driver 0 and rider 6
+Rider r7 is on the deviated route of driver d1
+Updated eligibility matrix for driver 0: [0 0 0 0 0 0 1 0 0]
+Updated seats for driver 0: 3
+Updated offers: [0 0 0 0 0 0 0 0 0]
+Final DP_assigned: {'d1': {'driver_path': [1, 8, 11, 15, 19, 24, 28, 33], 'riders': [{'rider_id': 'r4', 'source': 11, 'destination': 24}, {'rider_id': 'r7', 'source': 15, 'destination': 33}]}, 'd2': {'driver_path': [3, 7, 11, 10, 14, 18, 23, 31, 32], 'riders': [{'rider_id': 'r2', 'source': 19, 'destination': 32}, {'rider_id': 'r8', 'source': 7, 'destination': 31}]}, 'd3': {'driver_path': [5, 6, 13, 17, 22, 21, 29, 34], 'riders': [{'rider_id': 'r6', 'source': 21, 'destination': 34}, {'rider_id': 'r9', 'source': 6, 'destination': 21}]}}
+Total remaining seats: 6, Total riders: 9
+===== Input Data =====
+
+Drivers Information:
+Driver ID: d1, Source: 1, Destination: 33, Seats: 3, Threshold: 25
+Driver ID: d2, Source: 3, Destination: 32, Seats: 1, Threshold: 25
+Driver ID: d3, Source: 5, Destination: 34, Seats: 2, Threshold: 25
+
+Riders Information:
+Rider ID: r1, Source: 10, Destination: 28
+Rider ID: r2, Source: 19, Destination: 32
+Rider ID: r3, Source: 16, Destination: 23
+Rider ID: r4, Source: 11, Destination: 24
+Rider ID: r5, Source: 7, Destination: 22
+Rider ID: r6, Source: 21, Destination: 34
+Rider ID: r7, Source: 15, Destination: 33
+Rider ID: r8, Source: 7, Destination: 31
+Rider ID: r9, Source: 6, Destination: 21
+
+===== Assigned Riders, Paths, and Remaining Seats for Each Driver =====
+Driver d1:
+  Driver Path: [1, 8, 11, 15, 19, 24, 28, 33]
+    Rider ID: r4, Source: 11, Destination: 24
+    Rider ID: r7, Source: 15, Destination: 33
+Driver d2:
+  Driver Path: [3, 7, 11, 10, 14, 18, 23, 31, 32]
+    Rider ID: r2, Source: 19, Destination: 32
+    Rider ID: r8, Source: 7, Destination: 31
+Driver d3:
+  Driver Path: [5, 6, 13, 17, 22, 21, 29, 34]
+    Rider ID: r6, Source: 21, Destination: 34
+    Rider ID: r9, Source: 6, Destination: 21
+
+Total Current Seats Available: 6/12, Total Number of Accommodated Riders: 6 out of 9

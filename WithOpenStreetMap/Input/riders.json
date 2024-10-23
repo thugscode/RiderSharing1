@@ -1,0 +1,53 @@
+[
+    {
+        "id": "R1",
+        "source": "HJB Hall of Residence",
+        "destination": "Nalanda Lecture Complex"
+    },
+    {
+        "id": "R2",
+        "source": "Technology Student Gymkhana",
+        "destination": "DEPT OF COMPUTER SCIENCE AND ENGINEERING"
+    },
+    {
+        "id": "R3",
+        "source": "Technology Guest House",
+        "destination": "DEPT OF BIOTECHNOLOGY"
+    },
+    {
+        "id": "R4",
+        "source": "Technology Guest House",
+        "destination": "DEPT OF INDUSTRIAL ENGINEERING AND MANAGEMENT"
+    },
+    {
+        "id": "R5",
+        "source": "VS Hall of Residence",
+        "destination": "Takshashila Complex"
+    },
+    {
+        "id": "R6",
+        "source": "Mother Terese Hall of Residence",
+        "destination": "DEPT OF REMOTE SENSING"
+    },
+    {
+        "id": "R7",
+        "source": "IIT Puri Gate Security Office",
+        "destination": "B R Ambedkar Hall of Residence"
+    },
+    {
+        "id": "R8",
+        "source": "SAM",
+        "destination": "Tech Market"
+    },
+    {
+        "id": "R9",
+        "source": "Bidhan Chandra Roy Technology Hospital",
+        "destination": "DEPT OF AGRICULTURE ENGINEERING"
+    },
+    {
+        "id": "R10",
+        "source": "SAM",
+        "destination": "Nalanda Lecture Complex"
+    }
+
+]
