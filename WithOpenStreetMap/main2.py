@@ -47,7 +47,7 @@ class EligibilityRiderMatrix:
         self.graph_manager = graph_manager
         self.ER = None
         self.offers = None
-        output_file.write("EligibilityRiderMatrix initialized.\n")
+        output_file.write("########## Eligibility Rider(ER) Matrix initialized. ###########\n")
 
     def calculate(self, drivers, riders, output_file):
         num_drivers = len(drivers)
@@ -55,21 +55,26 @@ class EligibilityRiderMatrix:
 
         self.ER = np.zeros((num_drivers, num_riders), dtype=int)
         self.offers = np.zeros(num_riders, dtype=int)
-        output_file.write(f"Initialized ER matrix of size {self.ER.shape} and offers: {self.offers}\n")
+        output_file.write(f"Initialized ER matrix of size {self.ER.shape} and ER :\n {self.ER}\n")
+        output_file.write(f"Offer array: \n{self.offers}\n")
 
         for i, driver in enumerate(drivers):
+            output_file.write(f"##### Driver {driver.id}: ##### \n")
             SP, sp_length = self.shortest_path_distance(driver.source, driver.destination, output_file)
             t = driver.threshold
             MP = sp_length * (1 + (t / 100))
-            output_file.write(f"Driver {driver.id}: Shortest Path (SP) length = {sp_length}, Maximum Path (MP) = {MP}\n")
+            output_file.write(f"Shortest Path (SP) distance = {sp_length}, Maximum Path (MP) distance= {MP}\n")
 
             for j, rider in enumerate(riders):
+                output_file.write(f"####### Checking for rider {rider.id} is eligible for driver {driver.id}...... #######\n")
                 DP = self.calculate_deviated_path(driver, rider, output_file)
-                output_file.write(f"Rider {rider.id}: Deviated Path (DP) length = {DP}\n")
+                output_file.write(f"Rider {rider.id}: Deviated Path (DP) length = {DP}, MP = {MP}\n")
                 if DP <= MP:
                     self.ER[i][j] = 1
                     output_file.write(f"Rider {rider.id} is eligible for Driver {driver.id}\n")
-
+                else:
+                    output_file.write(f"Rider {rider.id} is not eligible for Driver {driver.id}\n")
+            output_file.write(f"Eligibility matrix after checking the all riders for driver {driver.id}:\n {self.ER}\n")
         output_file.write(f"Eligibility matrix after calculation: \n{self.ER}\n")
         self.update_offers(output_file)
 
@@ -77,7 +82,7 @@ class EligibilityRiderMatrix:
         try:
             path = nx.shortest_path(self.graph_manager.graph, source=source, target=target, weight='weight')
             path_length = nx.shortest_path_length(self.graph_manager.graph, source=source, target=target, weight='weight')
-            output_file.write(f"Shortest path from {source} to {target}: {path}, Length: {path_length}\n")
+            output_file.write(f"Shortest path from Source {source} to Destination {target}: {path}, Shortest Length: {path_length}\n")
             return path, path_length
         except nx.NetworkXNoPath:
             output_file.write(f"No path found from {source} to {target}.\n")
@@ -91,7 +96,7 @@ class EligibilityRiderMatrix:
         DP = (dp1_length if dp1_length != float('inf') else float('inf')) + \
              (dp2_length if dp2_length != float('inf') else float('inf')) + \
              (dp3_length if dp3_length != float('inf') else float('inf'))
-        output_file.write(f"Deviated path for driver {driver.id} and rider {rider.id}: DP1={dp1_length}, DP2={dp2_length}, DP3={dp3_length}, Total DP={DP}\n")
+        output_file.write(f"Deviated path for driver {driver.id} and rider {rider.id}: SP1={dp1_length}, sP2={dp2_length}, sP3={dp3_length}, Total DP(SP1+SP2+SP3)={DP}\n")
         return DP
 
     def update_offers(self, output_file):
@@ -100,9 +105,11 @@ class EligibilityRiderMatrix:
 
     def assign_riders_to_drivers(self, drivers, riders, output_file):
         DP_assigned = {driver.id: {'driver_path': [], 'riders': []} for driver in drivers}
+        output_file.write(f"###################################################################\n")
         output_file.write(f"Initial DP_assigned: {DP_assigned}\n")
 
         while np.sum(self.offers) > 0:
+            output_file.write(f"###################################################################\n")
             non_zero_offers = self.offers[self.offers > 0]
             output_file.write(f"Non-zero offers: {non_zero_offers}\n")
             if non_zero_offers.size == 0:
@@ -110,15 +117,18 @@ class EligibilityRiderMatrix:
 
             Min_offer = np.min(non_zero_offers)
             Min_offer_set = np.where(self.offers == Min_offer)[0]
+            output_file.write(f"Set of riders with minimum offer {Min_offer}: {Min_offer_set+1}\n")
+
 
             r_selected = Min_offer_set[0] if len(Min_offer_set) == 1 else random.choice(Min_offer_set)
-            output_file.write(f"Selected rider {r_selected} with min offer: {Min_offer}\n")
+            output_file.write(f"Selected rider r{r_selected+1} with minimum offer: {Min_offer}\n")
+            
             eligible_drivers = np.where(self.ER[:, r_selected] == 1)[0]
-            output_file.write(f"Eligible drivers for rider {r_selected}: {eligible_drivers}\n")
+            output_file.write(f"Eligible drivers for rider r{r_selected+1}: {eligible_drivers+1}\n")
 
             # Use eligible_drivers to get the driver index
             d_assigned = self.select_driver(eligible_drivers, drivers, output_file)
-            output_file.write(f"Assigned driver {d_assigned} to rider {r_selected}\n")
+            output_file.write(f"Assigned driver d{d_assigned+1} to rider r{r_selected+1}\n")
 
             driver = drivers[d_assigned]  # Assign the driver using the index
             rider = riders[r_selected]
@@ -140,7 +150,7 @@ class EligibilityRiderMatrix:
 
     def select_driver(self, eligible_drivers, drivers, output_file):
         if len(eligible_drivers) == 1:
-            output_file.write(f"Only one eligible driver: {eligible_drivers[0]}\n")
+            output_file.write(f"Only one eligible driver: d{eligible_drivers[0]+1}\n")
             return eligible_drivers[0]
         else:
             max_seats = -1
@@ -152,7 +162,7 @@ class EligibilityRiderMatrix:
                 elif drivers[driver_idx].seats == max_seats:
                     drivers_with_max_seats.append(driver_idx)
             selected_driver = random.choice(drivers_with_max_seats)
-            output_file.write(f"Selected driver {selected_driver} from drivers with max seats: {drivers_with_max_seats}\n")
+            output_file.write(f"Selected driver d{selected_driver+1} from drivers with max seats: {drivers_with_max_seats}\n")
             return selected_driver
 
     def calculate_deviated_path_for_assignment(self, driver, rider, output_file):
@@ -164,18 +174,19 @@ class EligibilityRiderMatrix:
         return full_path
 
     def update_eligibility(self, d_assigned, r_selected, drivers, riders, DP_assigned, output_file):
-        output_file.write(f"Updating eligibility for driver {d_assigned} and rider {r_selected}\n")
+        output_file.write(f"Updating eligibility for driver d{d_assigned+1} and rider r{r_selected+1}\n")
         for rj in range(len(riders)):
             if self.ER[d_assigned][rj] == 1:
                 if not self.is_on_deviated_route(drivers[d_assigned].id, riders[rj], DP_assigned, output_file):
                     self.ER[d_assigned][rj] = 0
-        output_file.write(f"Updated eligibility matrix for driver {d_assigned}: {self.ER[d_assigned]}\n")
 
         for d in range(len(drivers)):
             self.ER[d][r_selected] = 0
-
+            
+        output_file.write(f"Updated eligibility matrix(ER) for driver d{d_assigned+1}: \n{self.ER}\n")
+        
         drivers[d_assigned].seats -= 1
-        output_file.write(f"Updated seats for driver {d_assigned}: {drivers[d_assigned].seats}\n")
+        output_file.write(f"Updated seats for driver d{d_assigned+1}: {drivers[d_assigned].seats}\n")
         if drivers[d_assigned].seats == 0:
             self.ER[d_assigned] = np.zeros(len(riders))
 
@@ -197,7 +208,6 @@ class RideShareSystem:
         self.riders = self.load_riders(rider_file, output_file)
         self.eligibility_matrix = EligibilityRiderMatrix(self.graph_manager, output_file)
         self.total_initial_seats = sum(driver.seats for driver in self.drivers)
-        output_file.write(f"Total initial seats: {self.total_initial_seats}\n")
 
     @staticmethod
     def load_drivers(file_path, output_file):
@@ -213,7 +223,8 @@ class RideShareSystem:
                     threshold=int(row['threshold'])
                 )
                 drivers.append(driver)
-        output_file.write(f"Loaded drivers: {[driver.__dict__ for driver in drivers]}\n")
+        output_file.write(f"##########  Program Start  ###########\n")
+        output_file.write(f"Loaded drivers info:\n {[driver.__dict__ for driver in drivers]}\n")
         return drivers
 
     @staticmethod
@@ -228,11 +239,10 @@ class RideShareSystem:
                     destination=int(row['destination'])
                 )
                 riders.append(rider)
-        output_file.write(f"Loaded riders: {[rider.__dict__ for rider in riders]}\n")
+        output_file.write(f"Loaded riders info:\n {[rider.__dict__ for rider in riders]}\n")
         return riders
 
     def run(self, output_file):
-        output_file.write("Running the ride-sharing system...")
         self.eligibility_matrix.calculate(self.drivers, self.riders, output_file)
         DPassigned = self.eligibility_matrix.assign_riders_to_drivers(self.drivers, self.riders, output_file)
         self.output_results(DPassigned, output_file)
