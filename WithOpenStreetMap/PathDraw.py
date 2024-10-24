@@ -1,3 +1,4 @@
+import os
 import osmnx as ox
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -43,8 +44,13 @@ def deviated_path_draw(graph, route_nodes):
 
 # Entry point of the script
 if __name__ == "__main__":
-    # Load the graph using OSMnx
-    graph = ox.load_graphml('./map/graph.graphml')
+    # Get the directoy of currect script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    map_dir = os.path.join(script_dir,'map')
+    
+    # Load the graph from .graphml file using osmnx
+    graph_path = os.path.join(map_dir,'graph.graphml')
+    graph = ox.load_graphml(graph_path)
 
     # Extract the node IDs for the route (as integers)
     route_nodes = [9457107118, 9457095410, 9457095395, 9457258212, 9457227827, 9443710189, 2614945489, 9457095207, 2614552637, 2613601291, 2613601289, 2613601282, 11250456423, 5297589434, 5297589433, 5297589435, 2613601271, 1471100885, 2613601368]
